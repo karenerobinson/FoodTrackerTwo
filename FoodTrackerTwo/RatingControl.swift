@@ -47,7 +47,7 @@ import UIKit
     
     //note: "@objc" was added by a "fix"
     @objc func ratingButtonTapped(button: UIButton) {
-        print("Button \(ratingButtons.index(of:button)) pressed 👍")
+        print("Button \(index) pressed 👍")
         
 
         guard let index = ratingButtons.index(of: button) else {
