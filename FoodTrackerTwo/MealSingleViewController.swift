@@ -8,6 +8,9 @@
 
 import UIKit
 
+import os.log
+// imports the unified logging system
+
 class MealSingleViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
@@ -15,6 +18,13 @@ class MealSingleViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var mealNameText: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var meal: Meal?
     
     
     override func viewDidLoad() {
@@ -59,6 +69,28 @@ class MealSingleViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         mealNameLabel.text = textField.text
+    }
+    
+    //MARK: Navigation
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        super.prepare(for: segue, sender: sender)
+    
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = mealNameText.text ?? ""
+        let photo = photoImageView.image
+        let rating = ratingControl.rating
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        meal = Meal(name: name, photo: photo, rating: rating)
+        
     }
     
     //MARK: Actions

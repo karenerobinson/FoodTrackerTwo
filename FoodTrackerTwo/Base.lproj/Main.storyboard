@@ -65,16 +65,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="iRD-UA-0Eg">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wxZ-YU-vR2"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="lzR-SI-cKo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="lzR-SI-cKo">
+                            <connections>
+                                <segue destination="SZI-wU-YoA" kind="unwind" unwindAction="unwindToMealListWithSender:" id="A8h-yF-nvr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mealNameLabel" destination="hmq-XV-3tI" id="iaY-xn-pcj"/>
                         <outlet property="mealNameText" destination="rbk-EB-iQ6" id="ijy-3F-yYo"/>
                         <outlet property="photoImageView" destination="xe7-X7-FIe" id="dJQ-Vr-iQi"/>
                         <outlet property="ratingControl" destination="zFg-me-XUD" id="U5u-FF-ezx"/>
+                        <outlet property="saveButton" destination="lzR-SI-cKo" id="VIK-jW-Ap7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="SZI-wU-YoA" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Ico-bh-vJF">
                     <connections>
                         <action selector="selectingImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="RCP-A3-nwo"/>
@@ -112,7 +118,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-4h-UL9" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-4h-UL9" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
                                             <rect key="frame" x="124" y="40" width="196" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
