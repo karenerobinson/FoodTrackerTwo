@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meal Single View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodTrackerTwo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MealSingleViewController" customModule="FoodTrackerTwo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="9Yo-ho-U4N">
-                                            <rect key="frame" x="-12" y="-20" width="128" height="128"/>
+                                            <rect key="frame" x="-12" y="0.0" width="128" height="89.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="9Yo-ho-U4N" secondAttribute="height" multiplier="1:1" id="IZL-Sy-yhg"/>
                                             </constraints>
@@ -113,6 +113,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="9Yo-ho-U4N" secondAttribute="bottom" id="0nd-ZR-FhO"/>
+                                        <constraint firstItem="9Yo-ho-U4N" firstAttribute="top" secondItem="aaD-s3-DxE" secondAttribute="top" id="NG3-Io-trM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="loi-aU-Xfk" id="h4Q-OC-6XY"/>
