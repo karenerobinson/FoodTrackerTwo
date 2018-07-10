@@ -57,7 +57,7 @@
                                     <constraint firstItem="xe7-X7-FIe" firstAttribute="leading" secondItem="0ej-1N-KKJ" secondAttribute="leading" id="vyx-M2-XaZ"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zFg-me-XUD" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zFg-me-XUD" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
                                 <rect key="frame" x="16" y="478" width="288" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
