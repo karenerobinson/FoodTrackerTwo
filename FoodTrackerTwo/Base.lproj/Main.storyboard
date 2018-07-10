@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-1N-KKJ">
-                                <rect key="frame" x="16" y="40" width="288" height="438.5"/>
+                                <rect key="frame" x="16" y="84" width="288" height="438.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-XV-3tI">
                                         <rect key="frame" x="101" y="0.0" width="86.5" height="20.5"/>
@@ -131,7 +131,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="MgF-6b-YJ7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a5v-6P-tiB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a5v-6P-tiB">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="kNu-u6-HHk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPX-Nn-zya" userLabel="First Responder" sceneMemberID="firstResponder"/>
