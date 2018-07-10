@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-1N-KKJ">
-                                <rect key="frame" x="16" y="40" width="288" height="458.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-1N-KKJ">
+                                <rect key="frame" x="16" y="40" width="288" height="438.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-XV-3tI">
                                         <rect key="frame" x="101" y="0.0" width="86.5" height="20.5"/>
@@ -44,8 +44,8 @@
                                             <outletCollection property="gestureRecognizers" destination="Ico-bh-vJF" appends="YES" id="mUR-51-heE"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zFg-me-XUD" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="394.5" width="288" height="64"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zFg-me-XUD" customClass="RatingControl" customModule="FoodTrackerTwo" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="394.5" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1335" y="38.028169014084504"/>
         </scene>
-        <!--Meal Table View Controller-->
+        <!--Your Meals-->
         <scene sceneID="Ihn-0A-YkV">
             <objects>
                 <tableViewController id="T1t-dH-tva" customClass="MealTableViewController" customModule="FoodTrackerTwo" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,9 @@
                             <outlet property="delegate" destination="T1t-dH-tva" id="W7T-ql-8Pq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MgF-6b-YJ7"/>
+                    <navigationItem key="navigationItem" title="Your Meals" id="MgF-6b-YJ7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a5v-6P-tiB"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPX-Nn-zya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
