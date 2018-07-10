@@ -10,6 +10,10 @@ import UIKit
 
 class RatingControl: UIStackView {
 
+    
+    
+    //MARK: Installation
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButtons()
@@ -18,6 +22,13 @@ class RatingControl: UIStackView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         setupButtons()
+    }
+    
+    //MARK: Button Action
+    
+    //note: "@objc" was added by a "fix"
+    @objc func ratingButtonTapped(button: UIButton) {
+        print("Button pressed 👍")
     }
     
     //MARK: Private Methods
@@ -32,7 +43,10 @@ class RatingControl: UIStackView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
-        
+
+        // Setup the button action
+        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+
         // Add the button to the stack
         addArrangedSubview(button)
     }
