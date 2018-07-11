@@ -32,6 +32,15 @@ class MealSingleViewController: UIViewController, UITextFieldDelegate, UIImagePi
         // Handle the text field’s user input through delegate callbacks.
         mealNameText.delegate = self
         
+        
+        // Set up views if editing an existing Meal.
+        if let meal = meal {
+            navigationItem.title = meal.name
+            mealNameText.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
@@ -82,6 +91,8 @@ class MealSingleViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     //MARK: Navigation
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+    }
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
